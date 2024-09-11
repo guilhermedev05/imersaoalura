@@ -157,6 +157,7 @@ a.active svg{
     display: flex;
     flex-direction: column;
     position: relative;
+    margin-right: 39.6px;
 }
 
 .game:hover{
@@ -166,7 +167,6 @@ a.active svg{
 .game-area {
     display: flex;
     flex-wrap: wrap;
-    gap: 59.4px;
     padding: 0px 80px;
     margin-top: 20px;
 }

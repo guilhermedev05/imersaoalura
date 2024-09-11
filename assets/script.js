@@ -54,45 +54,56 @@ document.querySelector('.navegation-filter').addEventListener('click', e => {
 
 });
 
-function filterPlatform(){
-    const platform = document.querySelector('.navegation-filter').addEventListener('click', e => {
-        gameArea.innerHTML = ''
-        const filterId = e.target.getAttribute('id')
+function filter() {
+    let selectedPlatform = '';
+    let selectedGenre = '';
+
+    // Atualiza a área de jogos com base na plataforma e no gênero selecionados
+    function updateGameArea() {
+        gameArea.innerHTML = ''; // Limpa a área de jogos
+
+        // Filtra os jogos com base na plataforma e no gênero selecionados
         const filteredGames = dados.filter(game => {
-            return game.plataforma.toLowerCase() === filterId.toLowerCase() || game.plataforma.toLowerCase() === 'todas';
+            const platformMatch = game.plataforma.toLowerCase() === selectedPlatform.toLowerCase() || game.plataforma.toLowerCase() === 'todas';
+            const genreMatch = selectedGenre === '' || game.genero.toLowerCase() === selectedGenre.toLowerCase();
+            return platformMatch && genreMatch;
         });
-        
+
+        // Renderiza os jogos filtrados
         filteredGames.forEach(game => {
-            gameArea.innerHTML += `<article class="game"><img class="logo-game" src="${game.logo}"><div class="nameAndAvaliation"><h2 class="title-game">${game.nome}</h2><span class="avaliation"></span></div><span>${game.genero}</span><span>${game.empresa}</span><div class="underImage"><a href="#" class="downloadButton">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a</div></article>`
+            gameArea.innerHTML += `
+                <article class="game">
+                    <img class="logo-game" src="${game.logo}">
+                    <div class="nameAndAvaliation">
+                        <h2 class="title-game">${game.nome}</h2>
+                        <span class="avaliation"></span>
+                    </div>
+                    <span>${game.genero}</span>
+                    <span>${game.empresa}</span>
+                    <div class="underImage">
+                        <a href="#" class="downloadButton">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a>
+                    </div>
+                </article>`;
         });
-    })
-}
 
-function filterGenre() {
-    document.querySelector('#select-genre').addEventListener('mouseup', item => {
-        const atualFilter = item.target.value
-        if(atualFilter != ''){
-            gameArea.innerHTML = ''
-            const filteredGames = dados.filter(game => {
-                return game.genero.toLowerCase() === atualFilter.toLowerCase()
-            })
-            filteredGames.forEach(game => {
-                gameArea.innerHTML += `<article class="game"><img class="logo-game" src="${game.logo}"><div class="nameAndAvaliation"><h2 class="title-game">${game.nome}</h2><span class="avaliation"></span></div><span>${game.genero}</span><span>${game.empresa}</span><div class="underImage"><a href="#" class="downloadButton">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a</div></article>`
-            });
-            setStar()
-        }
-        return atualFilter
-    })
-}
+        setStar(); // Atualiza as avaliações de estrelas
+    }
 
-function filter(platform, genre){
-    const filteredGames = dados.filter(game => {
-        return game.genero.toLowerCase() === atualFilter.toLowerCase()
-    })
+    // Ouvinte de clique para o filtro de plataforma
+    document.querySelector('.navegation-filter').addEventListener('click', e => {
+        selectedPlatform = e.target.getAttribute('id'); // Obtém a plataforma selecionada
+        updateGameArea(); // Atualiza a área de jogos com base na nova plataforma
+    });
+
+    // Ouvinte de mudança no seletor de gênero
+    document.querySelector('#select-genre').addEventListener('change', item => {
+        selectedGenre = item.target.value; // Obtém o gênero selecionado
+        updateGameArea(); // Atualiza a área de jogos com base no novo gênero
+    });
 }
 
 
 adicionarOpcoesAoSelect(dados, selectGenres)
-filterPlatform()
+filter()
 addGame()
 setStar()
