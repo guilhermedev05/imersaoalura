@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Store</title>
+    <script src="https://kit.fontawesome.com/7bcca750a9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="area-logo">
+            <img id="logo" src="images/joystick.png" alt="">
+            <span>Games Store</span>
+        </a>
+
+        <button id="login"><a href="#">Login</a></button>
+    </header>
+    <main class="mainPrincipal">
+        <nav class="navegation-filter">
+            <ul>
+                <li><a id="mobile" class="filter-platform" href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24"
+                            height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                        </svg>Mobile</a></li>
+                <li><a id="desktop" class="filter-platform" href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24"
+                            height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+                        </svg>Desktop</a></li>
+                <li><a id="console" class="filter-platform" href="#"><i class="fa-solid fa-gamepad"></i>Console</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-area">
+            <input id="searchGame" type="text" placeholder="Procure um jogo">
+            <img id="search" src="images/search.svg" alt="">
+            <select id="select-genre">
+                <option value="0" disabled selected>Filtrar por gênero</option>
+                <option value="sem filtro">Sem filtro</option>
+            </select>
+            <img class="filter" src="images/filter.svg" alt="">
+        </div>
+        <section class="game-area">
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+
+    <script src="js/dados.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
