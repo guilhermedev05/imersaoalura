@@ -20,8 +20,8 @@ header{
     display: flex;
     align-items: center;
     padding: 0px 20px;
-    background-color: #03055ef8;
-    border-bottom: 2px solid #023E8A;
+    background-color: #fffffff8;
+    border-bottom: 2px solid #c4c4c4;
     position: fixed;
     left: 0;
     right: 0;
@@ -40,40 +40,12 @@ header{
     text-decoration: none;
     border: 0;
     cursor: pointer;
-    color: white;
+    color: black;
 }
 
 .area-logo span{
     font-weight: bold;
     font-size: 2rem;;
-}
-
-nav{
-    display: flex;
-    justify-content: center;
-    flex: 1;
-}
-
-nav ul{
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    font-size: 1.8rem;
-    position: relative;
-}
-
-li a {
-    color: black;
-    text-decoration: none;
-    transition: all ease 0.3s;
-    border: 1px solid transparent;
-    display: inline-block;
-}
-
-li a:hover{
-    color: rgb(71, 71, 71);
-    font-weight: 600;
-    transform: translateY(-5px);
 }
 
 #login {
@@ -82,7 +54,7 @@ li a:hover{
     background-color: transparent;
     color: black;
     background-color: white;
-    border: 2px solid white;
+    border: 2px solid black;
     position: absolute;
     right: 20px;
     transition: all ease 0.3s;
@@ -101,19 +73,49 @@ li a:hover{
 
 .navegation-filter a {
     padding: 5px 20px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 20px;
     gap: 10px;
     display: flex;
     align-items: center;
+    color: white;
 }
 
 .navegation-filter a.active{
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 a.active svg{
-    stroke: white;
+    stroke: black;
+}
+
+.navegation-filter{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.navegation-filter ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+    transition: all ease 0.3s;
+    border: 1px solid transparent;
+    display: inline-block;
+}
+
+li a:hover{
+    font-weight: 600;
+    transform: translateY(-5px);
+    background-color: white;
+    color: black;
 }
 
 .mainHome{
@@ -151,6 +153,8 @@ a.active svg{
 
 .mainPrincipal{
     padding-top: 110px;
+    background-color: rgb(15, 15, 15);
+    min-height: 100vh;
 }
 
 .game {
@@ -161,6 +165,7 @@ a.active svg{
     display: flex;
     flex-direction: column;
     position: relative;
+    color: white;
 }
 
 .game-area {
@@ -188,13 +193,15 @@ a.active svg{
 }
 
 .title-game{
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-top: 5px;
 }
 
 .nameAndAvaliation{
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 .avaliation {
@@ -210,11 +217,23 @@ a.active svg{
 .moreInfos {
     display: flex;
     justify-content: space-between;
+    color: white;
 }
 
 .generAndEnterprise{
     display: flex;
     flex-direction: column;
+}
+
+.about-game{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-game span {
+    font-weight: 600;
+    font-size: 1.4rem;
 }
 
 .arrow {
@@ -230,6 +249,10 @@ a.active svg{
 .moreInfo{
     margin-top: 20px;
     transition: all ease 0.5s;
+}
+
+.game-description{
+    font-size: 1.4rem;
 }
 
 .hidden {
@@ -299,6 +322,7 @@ a.active svg{
 .search-area{
     margin-top: 2rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -312,6 +336,11 @@ a.active svg{
 .search-area .filter{
     display: inline-block;
     margin-left: -35px;
+}
+
+.search-area div {
+    display: flex;
+    align-items: center;
 }
 
 .apresentation{
@@ -353,4 +382,5 @@ a.active svg{
     align-items: center;
     grid-column-start: 1;
     grid-column-end: 4;
+    color: white;
 }
