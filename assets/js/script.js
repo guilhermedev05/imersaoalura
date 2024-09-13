@@ -58,29 +58,32 @@ function adicionarOpcoesAoSelect(dados, selectElement) {
 }
 
 function setStar() {
-    let avaliationElements = document.querySelectorAll('.avaliation'); // Seleciona todos os elementos de avaliação
+    const avaliationElements = document.querySelectorAll('.avaliation'); // Seleciona todos os elementos de avaliação
 
-    // Itera sobre os dados dos jogos
-    for (let i in dados) {
-        let starsFilled = dados[i].avaliacao; // Pega o número de estrelas preenchidas para o jogo
-        let starsTotal = 5; // O total de estrelas a serem exibidas
-        let avaliationElement = avaliationElements[i]; // O elemento onde as estrelas serão inseridas
-        avaliationElement.innerHTML = ''; // Limpa o conteúdo anterior
+    avaliationElements.forEach((element, index) => {
+        // Obtém o jogo correspondente à avaliação
+        const game = dados.find(d => d.nome.toLowerCase() === element.closest('.game').querySelector('.title-game').textContent.toLowerCase());
 
-        // Adiciona as estrelas preenchidas
-        for (let j = 0; j < starsFilled; j++) {
-            const filledStar = document.createElement('img');
-            filledStar.src = 'images/star.svg'; // Estrela preenchida
-            avaliationElement.appendChild(filledStar);
+        if (game) {
+            const starsFilled = game.avaliacao; // Pega o número de estrelas preenchidas para o jogo
+            const starsTotal = 5; // O total de estrelas a serem exibidas
+            element.innerHTML = ''; // Limpa o conteúdo anterior
+
+            // Adiciona as estrelas preenchidas
+            for (let j = 0; j < starsFilled; j++) {
+                const filledStar = document.createElement('img');
+                filledStar.src = 'images/star.svg'; // Estrela preenchida
+                element.appendChild(filledStar);
+            }
+
+            // Adiciona as estrelas vazias
+            for (let j = starsFilled; j < starsTotal; j++) {
+                const emptyStar = document.createElement('img');
+                emptyStar.src = 'images/star-outline.svg'; // Estrela não preenchida
+                element.appendChild(emptyStar);
+            }
         }
-
-        // Adiciona as estrelas vazias
-        for (let j = starsFilled; j < starsTotal; j++) {
-            const emptyStar = document.createElement('img');
-            emptyStar.src = 'images/star-outline.svg'; // Estrela não preenchida
-            avaliationElement.appendChild(emptyStar);
-        }
-    }
+    });
 }
 
 
@@ -101,6 +104,7 @@ document.querySelectorAll('.navegation-filter a').forEach(item => {
 function filter() {
     let selectedPlatform = '';
     let selectedGenre = '';
+    let moreFilters = ''
 
     // Atualiza a área de jogos com base na plataforma e no gênero selecionados
     function updateGameArea() {
@@ -112,6 +116,15 @@ function filter() {
             const genreMatch = selectedGenre === '' || game.genero.includes(selectedGenre);
             return platformMatch && genreMatch;
         });
+
+        if (moreFilters === 'melhores avaliacoes') {
+            // Ordena por melhores avaliações (do maior para o menor)
+            filteredGames.sort((a, b) => b.avaliacao - a.avaliacao);
+        } else if (moreFilters === 'ordem alfabetica') {
+            // Ordena por ordem alfabética
+            filteredGames.sort((a, b) => a.nome.localeCompare(b.nome));
+        }
+
         if (filteredGames.length > 0) {
             let i = 1
             filteredGames.forEach(game => {
@@ -168,6 +181,12 @@ function filter() {
         selectedGenre = item.target.value == 'sem filtro' ? '' : item.target.value // Obtém o gênero selecionado
         updateGameArea(); // Atualiza a área de jogos com base no novo gênero
     });
+
+    document.querySelector('#more-filters').addEventListener('change', item => {
+        moreFilters = item.target.value == 'sem filtro' ? '' : item.target.value
+        console.log(moreFilters)
+        updateGameArea()
+    })
 }
 
 function searchGame() {
@@ -215,34 +234,40 @@ function searchGame() {
 }
 
 function moreInfo() {
-    document.querySelectorAll('.arrow').forEach(item => {
-        
-        item.addEventListener('click', item => {
+    // Adiciona um evento de clique no container pai que contém os elementos de "moreInfo"
+    gameArea.addEventListener('click', function(event) {
+        const target = event.target;
 
-            const containsArrow = item.target.classList.contains('rotateArrow')
-            const arrowId = item.target.getAttribute('data-arrow')
-            
-            document.querySelectorAll('.arrow').forEach(item => {
-                item.classList.remove('rotateArrow')
-            })
+        // Verifica se o elemento clicado é uma seta
+        if (target.classList.contains('arrow')) {
+            const containsArrow = target.classList.contains('rotateArrow');
+            const arrowId = target.getAttribute('data-arrow');
 
-            document.querySelectorAll('.moreInfo').forEach(item => {
-                item.classList.add('hidden')
-            })
+            // Remove a classe 'rotateArrow' de todas as setas
+            document.querySelectorAll('.arrow').forEach(arrow => {
+                arrow.classList.remove('rotateArrow');
+            });
 
-            if(!containsArrow){
-                item.target.classList.add('rotateArrow')
-                document.querySelectorAll(`.moreInfo[data-info="${arrowId}"]`).forEach(item => {
-                    item.classList.remove('hidden')
-                })
+            // Adiciona a classe 'hidden' a todas as seções de mais informações
+            document.querySelectorAll('.moreInfo').forEach(info => {
+                info.classList.add('hidden');
+            });
+
+            // Se a seta clicada não tinha a classe 'rotateArrow', exibe as informações correspondentes
+            if (!containsArrow) {
+                target.classList.add('rotateArrow');
+                document.querySelectorAll(`.moreInfo[data-info="${arrowId}"]`).forEach(info => {
+                    info.classList.remove('hidden');
+                });
             }
-        })
-    })
+        }
+    });
 }
 
+
 addGame()
-setStar()
 adicionarOpcoesAoSelect(dados, selectGenres)
 searchGame()
 filter()
 moreInfo()
+setStar()

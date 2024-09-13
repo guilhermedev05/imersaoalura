@@ -15,8 +15,11 @@
             <img id="logo" src="images/joystick.png" alt="">
             <span>Games Store</span>
         </a>
-
-        <button id="login"><a href="#">Login</a></button>
+        <div class="menu">
+            <button id="login"><a href="#">Login</a></button>
+            <img src="images/menu.svg" alt="">              
+        </div>
+        
     </header>
     <main class="mainPrincipal">
         <nav class="navegation-filter">
@@ -42,12 +45,23 @@
                 <input id="searchGame" type="text" placeholder="Procure um jogo">
                 <img id="search" src="images/search.svg" alt="">
             </div>
-            <div>
-                <select id="select-genre">
-                    <option value="0" disabled selected style="color: gray;">Filtrar por gênero</option>
-                    <option value="sem filtro">Sem filtro</option>
-                </select>
-                <img class="filter" src="images/filter.svg" alt="">
+            <div class="filters">
+                <div>
+                    <select id="select-genre">
+                        <option value="0" disabled selected style="color: gray;">Filtrar por gênero</option>
+                        <option value="sem filtro">Sem filtro</option>
+                    </select>
+                    <img class="filter" src="images/filter.svg" alt="">
+                </div>
+                <div>
+                    <select id="more-filters">
+                        <option value="0" disabled selected style="color: gray;">Mais filtros</option>
+                        <option value="sem filtro">Sem filtro</option>
+                        <option value="melhores avaliacoes">Melhores avaliações</option>
+                        <option value="ordem alfabetica">Ordem alfabética</option>
+                    </select>
+                    <img class="filter" src="images/filter.svg" alt="">
+                </div>
             </div>
         </section>
         <section class="game-area">

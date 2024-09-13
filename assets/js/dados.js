@@ -102,7 +102,7 @@ let dados = [
         nome: 'Asphalt 9: Legends',
         empresa: 'Gameloft',
         plataforma: ['Mobile'],
-        avaliacao: '5',
+        avaliacao: '1',
         logo: 'https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70050000018569/6b78179ee108b8f83191d82e294fe18b08d075a2158eb03e9c4430e16064baa1',
         genero: ['Corrida'],
         description: 'Asphalt 9: Legends é um emocionante jogo de corrida que oferece gráficos impressionantes e uma variedade de carros e pistas. Com uma jogabilidade rápida e várias modalidades de corrida, é ideal para quem procura uma experiência de corrida intensa e visualmente deslumbrante.',

@@ -48,6 +48,17 @@ header{
     font-size: 2rem;;
 }
 
+.menu {
+    display: flex;
+    position: absolute;
+    gap: 20px;
+    right: 20px;
+}
+
+.menu img{
+    display: none;
+}
+
 #login {
     padding: 8px 30px;
     border-radius: 20px;
@@ -55,8 +66,6 @@ header{
     color: black;
     background-color: white;
     border: 2px solid black;
-    position: absolute;
-    right: 20px;
     transition: all ease 0.3s;
 }
 
@@ -141,7 +150,8 @@ li a:hover{
     cursor: pointer;
 }
 
-#select-genre{
+#select-genre,
+#more-filters{
     padding-top: 8px;
     padding-left: 20px;
     padding-right: 40px;
@@ -343,6 +353,10 @@ li a:hover{
     align-items: center;
 }
 
+.search-area .filters{
+    margin-top: 20px;
+}
+
 .apresentation{
     position: absolute;
     top: 0;
@@ -383,4 +397,23 @@ li a:hover{
     grid-column-start: 1;
     grid-column-end: 4;
     color: white;
+}
+
+@media (max-width: 768px) {
+    .game-area {
+        grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Duas colunas com largura mínima de 150px */
+        padding: 0 40px; /* Ajuste o padding se necessário */
+    }
+}
+
+/* Para telas ainda menores, como smartphones */
+@media (max-width: 480px) {
+    .game-area {
+        grid-template-columns: repeat(1, minmax(150px, 1fr)); /* Uma coluna com largura mínima de 150px */
+        padding: 0 20px; /* Ajuste o padding se necessário */
+    }
+
+    .menu img {
+        display: block;
+    }
 }
