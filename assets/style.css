@@ -135,6 +135,10 @@ a.active svg{
     border: 1px solid black;
 }
 
+#search {
+    cursor: pointer;
+}
+
 #select-genre{
     padding-top: 8px;
     padding-left: 20px;
@@ -150,22 +154,20 @@ a.active svg{
 }
 
 .game {
-    width: 30%;
+    width: 100%;
     border-radius: 10px;
     margin: 20px 0;
     transition: all ease 0.5s;
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-right: 39.6px;
-}
-
-.game:hover{
-    background-color: rgba(255, 255, 255, 0.911);
 }
 
 .game-area {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    justify-content: center;
+    column-gap: 50px;
     flex-wrap: wrap;
     padding: 0px 80px;
     margin-top: 20px;
@@ -191,12 +193,50 @@ a.active svg{
 
 .avaliation {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
 }
 
 .avaliation{
     font-size: 1.6rem;
+}
+
+.moreInfos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.generAndEnterprise{
+    display: flex;
+    flex-direction: column;
+}
+
+.arrow {
+    transform: rotate(180deg);
+    transition: transform ease 0.5s;
+    cursor: pointer;
+}
+
+.rotateArrow {
+    transform: rotate(360deg)
+}
+
+.moreInfo{
+    margin-top: 20px;
+    transition: all ease 0.5s;
+}
+
+.hidden {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.visible {
+    max-height: 500px; /* Ajuste conforme necessário */
+    opacity: 1;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
 .underImage{
@@ -210,6 +250,7 @@ a.active svg{
     transition: all ease 0.2s;
     align-items: center;
     justify-content: center;
+    top: 0;
 }
 
 .game:hover .underImage{
@@ -298,4 +339,12 @@ a.active svg{
     background-color: black;
     color: white;
     transform: translateY(-1rem);
+}
+
+.erro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
