@@ -181,6 +181,12 @@ a.active svg{
     position: relative;
 }
 
+.logo-game img{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
 .title-game{
     font-size: 2.2rem;
     margin-top: 5px;
@@ -253,7 +259,7 @@ a.active svg{
     top: 0;
 }
 
-.game:hover .underImage{
+.logo-game:hover .underImage{
     opacity: 1;
 }
 
