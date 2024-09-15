@@ -12,7 +12,7 @@ function addGame() {
     // Adiciona os jogos na área de jogos em ordem alfabética
     for (let i in orderData) {
         gameArea.innerHTML += `
-            <article class="game">
+            <article class="game animate__animated animate__fadeIn">
                     <div class="logo-game">
                         <img src="${orderData[i].logo}">
                         <div class="underImage">
@@ -29,7 +29,7 @@ function addGame() {
                             <span>${orderData[i].empresa}</span>
                         </div>
                         <div class="about-game">
-                            <span>Sobre este jogo</span>
+                            <span data-arrow="${Number([i])}">Sobre este jogo</span>
                             <img data-arrow="${Number([i])}" class="arrow" src="images/arrowdown.svg">
                         </div>
                     </div>
@@ -38,6 +38,7 @@ function addGame() {
                     </div>
                 </article>`;
     }
+    moreInfo()
 }
 
 function adicionarOpcoesAoSelect(dados, selectElement) {
@@ -126,10 +127,10 @@ function filter() {
         }
 
         if (filteredGames.length > 0) {
-            let i = 1
+            let i = 0
             filteredGames.forEach(game => {
                 gameArea.innerHTML += `
-                <article class="game">
+                <article class="game animate__animated animate__fadeIn">
                     <div class="logo-game">
                         <img src="${game.logo}">
                         <div class="underImage">
@@ -146,7 +147,7 @@ function filter() {
                             <span>${game.empresa}</span>
                         </div>
                         <div class="about-game">
-                            <span>Sobre este jogo</span>
+                            <span data-arrow="${Number([i])}">Sobre este jogo</span>
                             <img data-arrow="${Number([i])}" class="arrow" src="images/arrowdown.svg">
                         </div>
                     </div>
@@ -158,9 +159,9 @@ function filter() {
             })
         } else {
             gameArea.innerHTML = `
-                <div class="erro">
-                    <h1 style="text-align: center; font-size: 50px;">Não encontramos nenhum jogo.</h1>
-                    <img src="https://img.freepik.com/vetores-gratis/ilustracao-do-conceito-de-aviso_114360-1551.jpg">
+                <div class="erro animate__animated animate__fadeIn">
+                    <h1>Não encontramos nenhum jogo.</h1>
+                    <img src="images/error.svg">
                 </div>
                 `
         }
@@ -184,7 +185,6 @@ function filter() {
 
     document.querySelector('#more-filters').addEventListener('change', item => {
         moreFilters = item.target.value == 'sem filtro' ? '' : item.target.value
-        console.log(moreFilters)
         updateGameArea()
     })
 }
@@ -200,7 +200,7 @@ function searchGame() {
             for (let i in game) {
                 searchGame.value = ''
                 gameArea.innerHTML += `
-                <article class="game">
+                <article class="game animate__animated animate__fadeIn">
                     <div class="logo-game">
                         <img src="${game[i].logo}">
                         <div class="underImage">
@@ -217,7 +217,7 @@ function searchGame() {
                             <span>${game[i].empresa}</span>
                         </div>
                         <div class="about-game">
-                            <span>Sobre este jogo</span>
+                            <span data-arrow="${Number([i])}">Sobre este jogo</span>
                             <img data-arrow="${Number([i])}" class="arrow" src="images/arrowdown.svg">
                         </div>
                     </div>
@@ -229,51 +229,84 @@ function searchGame() {
             }
         } else {
             gameArea.innerHTML = `
-                <div class="erro">
-                    <h1 style="text-align: center; font-size: 50px;">Não encontramos este jogo.</h1>
-                    <img src="https://img.freepik.com/vetores-gratis/ilustracao-do-conceito-de-aviso_114360-1551.jpg">
+                <div class="erro animate__animated animate__fadeIn">
+                    <h1>Não encontramos nenhum jogo.</h1>
+                    <img src="images/error.svg">
                 </div>
                 `
         }
     })
 }
 
+// function moreInfo() {
+//     // Adiciona um evento de clique no container pai que contém os elementos de "moreInfo"
+//     document.querySelector('.game-area').addEventListener('click', function(event) {
+//         const target = event.target;
+
+//         // Verifica se o elemento clicado é uma seta
+//         if (target.classList.contains('arrow')) {
+
+//             const containsArrow = target.classList.contains('rotateArrow');
+//             const arrowId = target.getAttribute('data-arrow');
+
+//             document.querySelectorAll('.arrow').forEach(arrow => {
+//                 arrow.classList.remove('rotateArrow');
+//             });
+//             // Adiciona a classe 'hidden' a todas as seções de mais informações
+//             document.querySelectorAll('.moreInfo').forEach(info => {
+//                 info.classList.add('hidden');
+//             });
+
+//             // Se a seta clicada não tinha a classe 'rotateArrow', exibe as informações correspondentes
+//             if (!containsArrow) {
+//                 target.classList.add('rotateArrow');
+//                 document.querySelectorAll(`.moreInfo[data-info="${arrowId}"]`).forEach(info => {
+//                     info.classList.remove('hidden');
+//                 });
+//             }
+//         }
+//     });
+// }
+
 function moreInfo() {
-    // Adiciona um evento de clique no container pai que contém os elementos de "moreInfo"
-    gameArea.addEventListener('click', function(event) {
-        const target = event.target;
+    document.querySelectorAll('.about-game').forEach(e => {
+        e.addEventListener('click', (event) => {
+            const target = event.target;
+            console.log(target)
+            // Verifica se o elemento clicado é uma seta
+            if (target.classList.contains('arrow') || target.innerHTML.toLowerCase() == 'sobre este jogo') {
+                
+                const containsArrow = target.classList.contains('rotateArrow') || target.classList.contains('active-info');
+                // target.classList.contains('rotateArrow')
+                const arrowId = target.getAttribute('data-arrow');
 
-        // Verifica se o elemento clicado é uma seta
-        if (target.classList.contains('arrow')) {
-            const containsArrow = target.classList.contains('rotateArrow');
-            const arrowId = target.getAttribute('data-arrow');
-
-            // Remove a classe 'rotateArrow' de todas as setas
-            document.querySelectorAll('.arrow').forEach(arrow => {
-                arrow.classList.remove('rotateArrow');
-            });
-
-            // Adiciona a classe 'hidden' a todas as seções de mais informações
-            document.querySelectorAll('.moreInfo').forEach(info => {
-                info.classList.add('hidden');
-            });
-
-            // Se a seta clicada não tinha a classe 'rotateArrow', exibe as informações correspondentes
-            if (!containsArrow) {
-                target.classList.add('rotateArrow');
-                document.querySelectorAll(`.moreInfo[data-info="${arrowId}"]`).forEach(info => {
-                    info.classList.remove('hidden');
+                document.querySelectorAll('.about-game span').forEach(arrow => {
+                    arrow.classList.remove('active-info');
                 });
+
+                document.querySelectorAll('.arrow').forEach(arrow => {
+                    arrow.classList.remove('rotateArrow');
+                });
+                // Adiciona a classe 'hidden' a todas as seções de mais informações
+                document.querySelectorAll('.moreInfo').forEach(info => {
+                    info.classList.add('hidden');
+                });
+
+                // Se a seta clicada não tinha a classe 'rotateArrow', exibe as informações correspondentes
+                if (!containsArrow) {
+                    document.querySelector(`img[data-arrow="${arrowId}"]`).classList.add('rotateArrow');
+                    document.querySelector(`span[data-arrow="${arrowId}"]`).classList.add('active-info');
+                    document.querySelectorAll(`.moreInfo[data-info="${arrowId}"]`).forEach(info => {
+                        info.classList.remove('hidden');
+                    });
+                }
             }
-        }
-    });
+        })
+    })
 }
-
-
 
 addGame()
 adicionarOpcoesAoSelect(dados, selectGenres)
 searchGame()
 filter()
-moreInfo()
 setStar()

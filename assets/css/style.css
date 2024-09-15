@@ -90,10 +90,29 @@ header {
 .navegation-filter a.active {
     background-color: white;
     color: black;
+    font-weight: 600;
 }
 
 a.active svg {
     stroke: black;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    gap: 2rem;
+    padding: 0 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.filters div{
+    display: flex;
+}
+
+.filters .filter{
+    margin-left: -3.5rem;
 }
 
 .navegation-filter {
@@ -120,7 +139,7 @@ li a {
 
 li a:hover {
     font-weight: 600;
-    transform: translateY(-5px);
+    transform: translateY(-0.5rem);
     background-color: white;
     color: black;
 }
@@ -160,6 +179,18 @@ li a:hover {
     background-color: transparent;
     color: white;
     border: 1px solid white;
+}
+
+#select-genre option,
+#more-filters option{
+    background-color: black;
+    color: white;
+}
+
+#select-genre option:hover,
+#more-filters option:hover{
+    background-color: white;
+    color: black;
 }
 
 .mainPrincipal {
@@ -364,6 +395,7 @@ li a:hover {
 .search-area #searchGame{
     background-color: transparent;
     border: 1px solid white;
+    color: white;
 }
 
 #searchGame::placeholder{
@@ -371,6 +403,8 @@ li a:hover {
 }
 
 .search-area .filters {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
 }
 
@@ -401,12 +435,6 @@ li a:hover {
     transition: all ease-out 0.3s;
 }
 
-.apresentation a:hover {
-    background-color: black;
-    color: white;
-    transform: translateY(-1rem);
-}
-
 .erro {
     display: flex;
     flex-direction: column;
@@ -414,9 +442,32 @@ li a:hover {
     grid-column-start: 1;
     grid-column-end: 4;
     color: white;
+    font-size: 3.5rem;
+}
+
+.erro img{
+    max-width: 700px;
 }
 
 @media (max-width: 768px) {
+
+    .filters {
+        display: flex;
+        align-items: center;
+        overflow: auto;
+        gap: 2rem;
+        padding: 0 2rem;
+        margin-top: 2rem;
+        justify-content: center;
+    }
+
+    .filters div{
+        display: flex;
+    }
+
+    .filters .filter{
+        margin-left: -3.5rem;
+    }
 
     .game-area {
         grid-template-columns: repeat(2, minmax(150px, 1fr));
@@ -472,10 +523,23 @@ li a:hover {
         margin-left: -3.5rem;
     }
 
+    li a:hover{
+        transform: translateY(0rem);
+    }
+
     .game-area {
         grid-template-columns: repeat(1, minmax(150px, 1fr));
         /* Uma coluna com largura mínima de 150px */
         padding: 0 20px;
         /* Ajuste o padding se necessário */
+    }
+
+    .moreInfos{
+        flex-direction: column;
+    }
+
+    .about-game{
+        margin-top: 1rem;
+        justify-content: right;
     }
 }
