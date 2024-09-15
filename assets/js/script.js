@@ -226,6 +226,7 @@ function searchGame() {
                     </div>
                 </article>`;
                 setStar()
+                moreInfo()
             }
         } else {
             gameArea.innerHTML = `

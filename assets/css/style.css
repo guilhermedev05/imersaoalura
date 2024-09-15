@@ -443,6 +443,7 @@ li a:hover {
     grid-column-end: 4;
     color: white;
     font-size: 3.5rem;
+    text-align: center;
 }
 
 .erro img{
@@ -458,7 +459,7 @@ li a:hover {
         gap: 2rem;
         padding: 0 2rem;
         margin-top: 2rem;
-        justify-content: center;
+        justify-content: center;;
     }
 
     .filters div{
@@ -525,6 +526,9 @@ li a:hover {
 
     li a:hover{
         transform: translateY(0rem);
+        font-weight: normal;
+        background-color: transparent;
+        color: white;
     }
 
     .game-area {
