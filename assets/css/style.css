@@ -115,10 +115,14 @@ a.active svg {
     display: flex;
     align-items: center;
     overflow: auto;
-    gap: 2rem;
+    gap: 3rem;
     padding: 0 2rem;
     margin-top: 2rem;
     justify-content: center;
+}
+
+.filters::-webkit-scrollbar{
+    display: none;
 }
 
 .filters div{
@@ -410,12 +414,14 @@ li a:hover {
     text-align: center;
     font-size: 5rem;
     color: white;
+    padding: 0 2rem;
 }
 
 .subtitle {
     text-align: center;
     font-size: 1.8rem;
     color: rgb(196, 196, 196);
+    padding: 0 2rem;
     font-weight: normal;
 }
 
@@ -479,28 +485,40 @@ footer {
 
 footer a{
     text-decoration: none;
-    display: inline-block;
     color: black;
     transition: font-weight ease 0.3s, transform ease 0.3s;
-    border-bottom: 0rem solid black;
 }
 
-footer:hover a {
-    transform: translateY(-0.5rem);
-    font-weight: 500;
+footer div{
+    display: inline-flex;
+    border-bottom: 0rem solid black;
+    gap: 1rem;
+    transition: all ease 0.3s;
+    margin-top: 0.5rem;
+    font-size: 2.2rem;
+}
+
+footer:hover div{
     border-bottom: 0.1rem solid black;
+    transform: translateY(-0.5rem);
 }
 
 @media (max-width: 768px) {
+
+    .title{
+        font-size: 4rem;
+    }
+
+    .subtitle{
+        font-size: 1.6rem;
+    }
 
     .filters {
         display: flex;
         align-items: center;
         overflow: auto;
-        gap: 2rem;
         padding: 0 2rem;
         margin-top: 2rem;
-        justify-content: center;
     }
 
     .filters div{
@@ -521,6 +539,18 @@ footer:hover a {
 
 /* Para telas ainda menores, como smartphones */
 @media (max-width: 480px) {
+
+    .title{
+        font-size: 3.5rem;
+    }
+
+    .subtitle{
+        font-size: 1.4rem;
+    }
+
+    .apresentation a {
+        bottom: 14rem;
+    }
 
     .area-logo span {
         display: none;
@@ -558,7 +588,6 @@ footer:hover a {
         display: flex;
         align-items: center;
         overflow: auto;
-        gap: 2rem;
         padding: 0 2rem;
         margin-top: 2rem;
     }
@@ -596,14 +625,7 @@ footer:hover a {
 
     footer a{
         text-decoration: none;
-        display: inline-block;
         color: black;
         transition: font-weight ease 0.3s, transform ease 0.3s;
-        border-bottom: 0.1rem solid black;
-    }
-    
-    footer:hover a {
-        transform: translateY(0rem);
-        font-weight: normal;
     }
 }
