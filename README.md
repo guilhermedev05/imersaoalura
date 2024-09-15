@@ -1,24 +1,24 @@
 ---
 
-# [Games Store](https://imersaoalura-eta.vercel.app/assets/jogos.html)
+# 🎮 [Games Store](https://imersaoalura-eta.vercel.app/assets/jogos.html)
 
-O projeto Games Store é um sistema de busca de jogos que permite aos usuários buscar, classificar e filtrar jogos com base em diferentes critérios, como plataforma e categoria. O sistema usa JavaScript e animações com Animate.css para uma experiência interativa.
+Bem vindo ao Games Store, um projeto desenvolvido durante a Imersão DEV da Alura com Gemini. O Games Store é uma plataforma de jogos que permite aos usuários descobrir jogos atráves dos filtros de busca por categorias e plataformas, e do filtro de melhores avaliações.
 
-## Funcionalidades
+## 🚀 Funcionalidades
 
 - **Filtro de Jogos**: Filtre jogos por plataforma e categoria.
 - **Busca de Jogos**: Pesquise jogos pelo nome.
 - **Classificação**: Classifique jogos por avaliações ou ordem alfabética.
 - **Animações**: Animações para elementos da interface usando Animate.css.
 
-## Tecnologias Utilizadas
+## 🛠 Tecnologias Utilizadas
 
 - **HTML5**: Estruturação do conteúdo da página.
 - **CSS3**: Estilização, incluindo transições e animações.
 - **JavaScript**: Lógica de filtragem, busca e manipulação DOM.
 - **Animate.css**: Biblioteca para animações CSS.
 
-## Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
 ```
 /assets
@@ -30,14 +30,14 @@ O projeto Games Store é um sistema de busca de jogos que permite aos usuários 
 |-- jogos.html
 ```
 
-## Como Começar
+## 🚀 Como Começar
 
-### Requisitos
+### 📋 Requisitos
 
 - Um navegador moderno (Chrome, Firefox, Edge, etc.)
 - Editor de código (Visual Studio Code, Sublime Text, etc.)
 
-### Instalação
+### 📥 Instalação
 
 1. **Clone o Repositório**
 
@@ -55,7 +55,7 @@ O projeto Games Store é um sistema de busca de jogos que permite aos usuários 
 
    Abra o `index.html` em seu navegador para visualizar o projeto.
 
-### Uso
+### 🔎 Uso
 
 1. **Filtrar Jogos**
 
@@ -69,7 +69,7 @@ O projeto Games Store é um sistema de busca de jogos que permite aos usuários 
 
    Utilize as opções de classificação para ordenar os jogos por avaliação ou ordem alfabética.
 
-## Contribuições
+## 🤝 Contribuições
 
 Contribuições são bem-vindas! Se você deseja contribuir para este projeto, siga estas etapas:
 
@@ -95,7 +95,7 @@ Contribuições são bem-vindas! Se você deseja contribuir para este projeto, s
 
 5. **Crie um Pull Request**
 
-## Contato
+## 📲 Contato
 
 Se você tiver perguntas ou precisar de ajuda, entre em contato:
 
