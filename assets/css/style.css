@@ -473,7 +473,7 @@ footer:hover a {
         display: flex;
         align-items: center;
         overflow: auto;
-        gap: 3rem;
+        gap: 2rem;
         padding: 0 2rem;
         margin-top: 2rem;
         justify-content: center;
@@ -534,7 +534,7 @@ footer:hover a {
         display: flex;
         align-items: center;
         overflow: auto;
-        gap: 3rem;
+        gap: 2rem;
         padding: 0 2rem;
         margin-top: 2rem;
     }
@@ -568,5 +568,18 @@ footer:hover a {
     .about-game{
         margin-top: 1rem;
         justify-content: right;
+    }
+
+    footer a{
+        text-decoration: none;
+        display: inline-block;
+        color: black;
+        transition: font-weight ease 0.3s, transform ease 0.3s;
+        border-bottom: 0.1rem solid black;
+    }
+    
+    footer:hover a {
+        transform: translateY(0rem);
+        font-weight: normal;
     }
 }
