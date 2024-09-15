@@ -15,6 +15,20 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.header-home{
+    height: 80px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: #fffffff8;
+    border-bottom: 2px solid #c4c4c4;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-bottom: 100px;
+}
+
 header {
     height: 80px;
     z-index: 100;
@@ -144,20 +158,56 @@ li a:hover {
     color: black;
 }
 
-.mainHome {
-    background-image: url('images/background.jpg');
-    background-size: 100%;
+.main-home {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     filter: blur(100);
     padding-top: 20px;
-    min-height: 83.5vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 1;
 }
 
-#searchGame {
+.apresentation {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.apresentation a {
+    color: black;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.6rem;
+    position: absolute;
+    bottom: 15rem;
+    transition: all ease-out 0.3s;
+}
+
+.apresentation a:hover{
+    color: white;
+    transform: translateY(-0.5rem);
+    background-color: black;
+    font-weight: 600;
+}
+
+#search-game {
     padding: 8px 20px;
     border-radius: 20px;
     border: 1px solid black;
@@ -193,7 +243,7 @@ li a:hover {
     color: black;
 }
 
-.mainPrincipal {
+.main-principal {
     padding-top: 110px;
     background-color: rgb(15, 15, 15);
     min-height: 100vh;
@@ -334,7 +384,7 @@ li a:hover {
     opacity: 1;
 }
 
-.downloadButton {
+.download-button {
     background-color: white;
     border-radius: 2rem;
     padding: 0.8rem 2rem;
@@ -347,12 +397,12 @@ li a:hover {
     gap: 0.5rem;
 }
 
-.downloadButton:hover {
+.download-button:hover {
     background-color: green;
     color: white;
 }
 
-.downloadButton:hover .download {
+.download-button:hover .download {
     fill: white;
 }
 
@@ -365,7 +415,8 @@ li a:hover {
 .subtitle {
     text-align: center;
     font-size: 1.8rem;
-    color: gray;
+    color: rgb(196, 196, 196);
+    font-weight: normal;
 }
 
 .search-area {
@@ -388,13 +439,13 @@ li a:hover {
     gap: 1rem;
 }
 
-.search-area #searchGame{
+.search-area #search-game{
     background-color: transparent;
     border: 1px solid white;
     color: white;
 }
 
-#searchGame::placeholder{
+#search-game::placeholder{
     color: white;
 }
 
@@ -402,33 +453,6 @@ li a:hover {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-}
-
-.apresentation {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.apresentation a {
-    color: black;
-    text-decoration: none;
-    background-color: white;
-    border-radius: 2rem;
-    padding: 0.8rem 2rem;
-    font-size: 1.6rem;
-    position: absolute;
-    bottom: 15rem;
-    transition: all ease-out 0.3s;
 }
 
 .erro {
@@ -447,7 +471,7 @@ li a:hover {
 }
 
 footer {
-    padding: 2rem;
+    padding: 1.5rem;
     font-size: 1.6rem;
     background-color: #fffffff8;
     text-align: center;

@@ -16,7 +16,7 @@ function addGame() {
                     <div class="logo-game">
                         <img src="${orderData[i].logo}">
                         <div class="underImage">
-                            <a href="#" class="downloadButton">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a>
+                            <a href="${orderData[i].download}" target="_blank" class="download-button">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a>
                         </div>
                     </div>
                     <div class="nameAndAvaliation">
@@ -25,7 +25,7 @@ function addGame() {
                     </div>
                     <div class="moreInfos">
                         <div class="generAndEnterprise">
-                            <span>${orderData[i].genero.join(' ')}</span>
+                            <span>${orderData[i].genero.join(' • ')}</span>
                             <span>${orderData[i].empresa}</span>
                         </div>
                         <div class="about-game">
@@ -134,7 +134,7 @@ function filter() {
                     <div class="logo-game">
                         <img src="${game.logo}">
                         <div class="underImage">
-                            <a href="#" class="downloadButton">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a>
+                            <a href="${game.download}" class="download-button" target="_blank">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a>
                         </div>
                     </div>
                     <div class="nameAndAvaliation">
@@ -143,7 +143,7 @@ function filter() {
                     </div>
                     <div class="moreInfos">
                         <div class="generAndEnterprise">
-                            <span>${game.genero.join(' ')}</span>
+                            <span>${game.genero.join(' • ')}</span>
                             <span>${game.empresa}</span>
                         </div>
                         <div class="about-game">
@@ -191,7 +191,7 @@ function filter() {
 
 function searchGame() {
     const searchIcon = document.querySelector("#search")
-    const searchGame = document.querySelector("#searchGame")
+    const searchGame = document.querySelector("#search-game")
     searchIcon.addEventListener('click', e => {
         gameArea.innerHTML = ''
         let gameName = searchGame.value.toLowerCase()
@@ -204,7 +204,7 @@ function searchGame() {
                     <div class="logo-game">
                         <img src="${game[i].logo}">
                         <div class="underImage">
-                            <a href="#" class="downloadButton">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a>
+                            <a href="${game[i].download}" class="download-button" target="_blank">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a>
                         </div>
                     </div>
                     <div class="nameAndAvaliation">
@@ -213,7 +213,7 @@ function searchGame() {
                     </div>
                     <div class="moreInfos">
                         <div class="generAndEnterprise">
-                            <span>${game[i].genero.join(' ')}</span>
+                            <span>${game[i].genero.join(' • ')}</span>
                             <span>${game[i].empresa}</span>
                         </div>
                         <div class="about-game">
@@ -238,36 +238,6 @@ function searchGame() {
         }
     })
 }
-
-// function moreInfo() {
-//     // Adiciona um evento de clique no container pai que contém os elementos de "moreInfo"
-//     document.querySelector('.game-area').addEventListener('click', function(event) {
-//         const target = event.target;
-
-//         // Verifica se o elemento clicado é uma seta
-//         if (target.classList.contains('arrow')) {
-
-//             const containsArrow = target.classList.contains('rotateArrow');
-//             const arrowId = target.getAttribute('data-arrow');
-
-//             document.querySelectorAll('.arrow').forEach(arrow => {
-//                 arrow.classList.remove('rotateArrow');
-//             });
-//             // Adiciona a classe 'hidden' a todas as seções de mais informações
-//             document.querySelectorAll('.moreInfo').forEach(info => {
-//                 info.classList.add('hidden');
-//             });
-
-//             // Se a seta clicada não tinha a classe 'rotateArrow', exibe as informações correspondentes
-//             if (!containsArrow) {
-//                 target.classList.add('rotateArrow');
-//                 document.querySelectorAll(`.moreInfo[data-info="${arrowId}"]`).forEach(info => {
-//                     info.classList.remove('hidden');
-//                 });
-//             }
-//         }
-//     });
-// }
 
 function moreInfo() {
     document.querySelectorAll('.about-game').forEach(e => {
@@ -304,6 +274,11 @@ function moreInfo() {
         })
     })
 }
+
+document.querySelector('#login').addEventListener('click', e => {
+    e.preventDefault()
+    alert('🛠 em breve')
+})
 
 addGame()
 adicionarOpcoesAoSelect(dados, selectGenres)
