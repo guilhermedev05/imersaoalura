@@ -273,7 +273,6 @@ function moreInfo() {
     document.querySelectorAll('.about-game').forEach(e => {
         e.addEventListener('click', (event) => {
             const target = event.target;
-            console.log(target)
             // Verifica se o elemento clicado é uma seta
             if (target.classList.contains('arrow') || target.innerHTML.toLowerCase() == 'sobre este jogo') {
                 
