@@ -1,6 +1,6 @@
 ---
 
-# [Games Store]()
+# [Games Store](https://imersaoalura-eta.vercel.app/assets/jogos.html)
 
 O projeto Games Store é um sistema de busca de jogos que permite aos usuários buscar, classificar e filtrar jogos com base em diferentes critérios, como plataforma e categoria. O sistema usa JavaScript e animações com Animate.css para uma experiência interativa.
 
@@ -94,10 +94,6 @@ Contribuições são bem-vindas! Se você deseja contribuir para este projeto, s
    ```
 
 5. **Crie um Pull Request**
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ## Contato
 
