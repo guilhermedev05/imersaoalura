@@ -16,35 +16,35 @@ body {
 }
 
 .header-home{
-    height: 80px;
+    height: 8rem;
     z-index: 2;
     display: flex;
     align-items: center;
-    padding: 0px 20px;
+    padding: 0 2rem;
     background-color: #fffffff8;
-    border-bottom: 2px solid #c4c4c4;
+    border-bottom: 0.2rem solid #c4c4c4;
     position: fixed;
     left: 0;
     right: 0;
-    margin-bottom: 100px;
+    margin-bottom: 10rem;
 }
 
 header {
-    height: 80px;
+    height: 8rem;
     z-index: 100;
     display: flex;
     align-items: center;
-    padding: 0px 20px;
+    padding: 0 2rem;
     background-color: #fffffff8;
-    border-bottom: 2px solid #c4c4c4;
+    border-bottom: 0.2rem solid #c4c4c4;
     position: fixed;
     left: 0;
     right: 0;
-    margin-bottom: 100px;
+    margin-bottom: 10rem;
 }
 
 #logo {
-    width: 64px;
+    width: 6.4rem;
 }
 
 .area-logo {
@@ -66,17 +66,17 @@ header {
 .menu {
     display: flex;
     position: absolute;
-    gap: 20px;
-    right: 20px;
+    gap: 2rem;
+    right: 2rem;
 }
 
 #login {
-    padding: 8px 30px;
-    border-radius: 20px;
+    padding: 0.8rem 3rem;
+    border-radius: 2rem;
     background-color: transparent;
     color: black;
     background-color: white;
-    border: 2px solid black;
+    border: 0.2rem solid black;
     transition: all ease 0.3s;
 }
 
@@ -92,10 +92,10 @@ header {
 }
 
 .navegation-filter a {
-    padding: 5px 20px;
-    border: 1px solid white;
-    border-radius: 20px;
-    gap: 10px;
+    padding: 0.5rem 2rem;
+    border: 0.1rem solid white;
+    border-radius: 2rem;
+    gap: 1rem;
     display: flex;
     align-items: center;
     color: white;
@@ -142,7 +142,7 @@ a.active svg {
 .navegation-filter ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 2rem;
     font-size: 1.8rem;
     position: relative;
 }
@@ -151,7 +151,7 @@ li a {
     color: black;
     text-decoration: none;
     transition: all ease 0.3s;
-    border: 1px solid transparent;
+    border: 0.1rem solid transparent;
     display: inline-block;
 }
 
@@ -167,7 +167,7 @@ li a:hover {
     background-size: cover;
     background-repeat: no-repeat;
     filter: blur(100);
-    padding-top: 20px;
+    padding-top: 2rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -217,16 +217,16 @@ li a:hover {
 
 #select-genre,
 #more-filters {
-    padding-top: 8px;
-    padding-left: 20px;
-    padding-right: 40px;
-    padding-bottom: 8px;
-    border-radius: 20px;
+    padding-top: 0.8rem;
+    padding-left: 2rem;
+    padding-right: 4rem;
+    padding-bottom: 0.8rem;
+    border-radius: 2rem;
     appearance: none;
     outline: none;
     background-color: transparent;
     color: white;
-    border: 1px solid white;
+    border: 0.1rem solid white;
 }
 
 #select-genre option,
@@ -242,15 +242,15 @@ li a:hover {
 }
 
 .main-principal {
-    padding-top: 110px;
+    padding-top: 11rem;
     background-color: rgb(15, 15, 15);
     min-height: 100vh;
 }
 
 .game {
     width: 100%;
-    border-radius: 10px;
-    margin: 20px 0;
+    border-radius: 1rem;
+    margin: 2rem 0;
     transition: all ease 0.5s;
     display: flex;
     flex-direction: column;
@@ -260,43 +260,42 @@ li a:hover {
 
 .game-area {
     display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, minmax(20rem, 1fr));
     justify-content: center;
-    column-gap: 50px;
+    column-gap: 5rem;
     flex-wrap: wrap;
-    padding: 0px 80px;
-    margin-top: 20px;
+    padding: 0 8rem;
+    margin-top: 2rem;
 }
 
 .logo-game {
     width: 100%;
-    height: 200px;
-    border-radius: 10px;
-    box-shadow: 0 0px 5px gray;
+    height: 20rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem gray;
     transition: all ease-in 0.3s;
     position: relative;
 }
 
 .logo-game:hover {
-    box-shadow: 0 0 10px gray;
+    box-shadow: 0 0 1rem gray;
 }
 
 .logo-game img {
     width: 100%;
-    height: 200px;
-    border-radius: 10px;
+    height: 20rem;
+    border-radius: 1rem;
 }
 
 .title-game {
     font-size: 2rem;
-    margin-top: 5px;
 }
 
-.nameAndAvaliation {
+.name-and-avaliation {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 
 .avaliation {
@@ -323,7 +322,7 @@ li a:hover {
 .about-game {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
 }
 
 .about-game span {
@@ -342,7 +341,7 @@ li a:hover {
 }
 
 .moreInfo {
-    margin-top: 20px;
+    margin-top: 2rem;
     transition: all ease 0.5s;
 }
 
@@ -358,7 +357,7 @@ li a:hover {
 }
 
 .visible {
-    max-height: 500px;
+    max-height: 50rem;
     /* Ajuste conforme necessário */
     opacity: 1;
     transition: max-height 0.5s ease, opacity 0.5s ease;
@@ -366,12 +365,12 @@ li a:hover {
 
 .underImage {
     width: 100%;
-    height: 200px;
+    height: 20rem;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     opacity: 0;
     position: absolute;
-    border-radius: 10px;
+    border-radius: 1rem;
     transition: all ease 0.2s;
     align-items: center;
     justify-content: center;
@@ -441,9 +440,9 @@ li a:hover {
 
 .search-area #search-game{
     background-color: transparent;
-    padding: 8px 20px;
-    border-radius: 20px;
-    border: 1px solid white;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    border: 0.1rem solid white;
     color: white;
     outline: none;
     transition: all ease 0.3s;
@@ -461,7 +460,7 @@ li a:hover {
 .search-area .filters {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 
 .erro {
@@ -476,7 +475,7 @@ li a:hover {
 }
 
 .erro img{
-    max-width: 700px;
+    max-width: 70rem;
 }
 
 footer {
@@ -538,14 +537,11 @@ footer:hover div{
     }
 
     .game-area {
-        grid-template-columns: repeat(2, minmax(150px, 1fr));
-        /* Duas colunas com largura mínima de 150px */
-        padding: 0 40px;
-        /* Ajuste o padding se necessário */
+        grid-template-columns: repeat(2, minmax(15rem, 1fr));
+        padding: 0 4rem;
     }
 }
 
-/* Para telas ainda menores, como smartphones */
 @media (max-width: 480px) {
 
     .title{
@@ -568,13 +564,12 @@ footer:hover div{
         overflow: auto;
         margin-top: 1rem;
         justify-content: normal;
-        padding: 0 20px;
+        padding: 0 2rem;
         scrollbar-width: none;
     }
-    
-    /* Para navegadores Webkit (Chrome, Safari, Edge) */
+
     .navegation-filter::-webkit-scrollbar {
-        display: none; /* Remove a barra de rolagem visível */
+        display: none;
     }
 
     .filter-area {
@@ -616,10 +611,8 @@ footer:hover div{
     }
 
     .game-area {
-        grid-template-columns: repeat(1, minmax(150px, 1fr));
-        /* Uma coluna com largura mínima de 150px */
-        padding: 0 20px;
-        /* Ajuste o padding se necessário */
+        grid-template-columns: repeat(1, minmax(15rem, 1fr));
+        padding: 0 2rem;
     }
 
     .moreInfos{
