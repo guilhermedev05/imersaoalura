@@ -189,7 +189,7 @@ li a:hover {
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .apresentation a {
@@ -515,7 +515,7 @@ footer:hover div{
 
 
     .apresentation a {
-        bottom: 2rem;
+        bottom: 4rem;
     }
 
     .filters {
@@ -554,7 +554,7 @@ footer:hover div{
     }
 
     .apresentation a {
-        bottom: 8rem;
+        bottom: 12rem;
     }
 
     .area-logo span {
