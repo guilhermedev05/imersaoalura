@@ -1,6 +1,6 @@
 ---
 
-# 🎮 [Games Store](https://imersaoalura-eta.vercel.app/assets/jogos.html)
+# 🎮 [Games Store](https://imersaoalura-eta.vercel.app/)
 
 Bem vindo ao Games Store, um projeto desenvolvido durante a Imersão DEV da Alura com Gemini. O Games Store é uma plataforma de jogos que permite aos usuários descobrir jogos atráves dos filtros de busca por categorias e plataformas, e do filtro de melhores avaliações.
 
