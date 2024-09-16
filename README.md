@@ -4,6 +4,9 @@
 
 Bem vindo ao Games Store, um projeto desenvolvido durante a Imersão DEV da Alura com Gemini. O Games Store é uma plataforma de jogos que permite aos usuários descobrir jogos atráves dos filtros de busca por categorias e plataformas, e do filtro de melhores avaliações.
 
+## 📷 Capturas de tela do projeto
+![desktop](https://i.imgur.com/1DeBI9Q.png) ![mobile](https://i.imgur.com/lAoytJE.png)
+
 ## 🚀 Funcionalidades
 
 - **Filtro de Jogos**: Filtre jogos por plataforma e categoria.
@@ -99,8 +102,8 @@ Contribuições são bem-vindas! Se você deseja contribuir para este projeto, s
 
 Se você tiver perguntas ou precisar de ajuda, entre em contato:
 
-- **Nome**: Seu Nome
-- **E-mail**: seuemail@example.com
-- **GitHub**: [@seu-usuario](https://github.com/seu-usuario)
+- **Nome**: Guilherme Santana
+- **E-mail**: guihlhermesxavier@gmail.com
+- **GitHub**: [@guilhermedev05](https://github.com/guilhermedev05)
 
 ---
