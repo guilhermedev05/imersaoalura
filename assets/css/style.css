@@ -513,6 +513,11 @@ footer:hover div{
         font-size: 1.6rem;
     }
 
+
+    .apresentation a {
+        bottom: 2rem;
+    }
+
     .filters {
         display: flex;
         align-items: center;
@@ -549,7 +554,7 @@ footer:hover div{
     }
 
     .apresentation a {
-        bottom: 14rem;
+        bottom: 8rem;
     }
 
     .area-logo span {
