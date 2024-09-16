@@ -211,12 +211,6 @@ li a:hover {
     font-weight: 600;
 }
 
-#search-game {
-    padding: 8px 20px;
-    border-radius: 20px;
-    border: 1px solid black;
-}
-
 #search {
     cursor: pointer;
 }
@@ -447,12 +441,21 @@ li a:hover {
 
 .search-area #search-game{
     background-color: transparent;
+    padding: 8px 20px;
+    border-radius: 20px;
     border: 1px solid white;
     color: white;
+    outline: none;
+    transition: all ease 0.3s;
 }
 
 #search-game::placeholder{
     color: white;
+}
+
+#search-game:focus{
+    transform: scale(1.05);
+    box-shadow: 0 0 1rem rgb(187, 187, 187);
 }
 
 .search-area .filters {
