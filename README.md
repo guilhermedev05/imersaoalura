@@ -31,6 +31,7 @@ Bem vindo ao Games Store, um projeto desenvolvido durante a Imersão DEV da Alur
 |-- /js
 |   |-- script.js
 |-- jogos.html
+index.html
 ```
 
 ## 🚀 Como Começar
