@@ -343,6 +343,7 @@ li a:hover {
 .moreInfo {
     margin-top: 2rem;
     transition: all ease 0.5s;
+    text-align: justify;
 }
 
 .game-description {

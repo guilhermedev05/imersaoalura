@@ -19,7 +19,7 @@ function addGame() {
                             <a href="${orderData[i].download}" target="_blank" class="download-button">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a>
                         </div>
                     </div>
-                    <div class="name-and-avaliation">
+                    <div class="nameAndAvaliation">
                         <h2 class="title-game">${orderData[i].nome}</h2>
                         <span class="avaliation"></span>
                     </div>
@@ -137,7 +137,7 @@ function filter() {
                             <a href="${game.download}" class="download-button" target="_blank">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a>
                         </div>
                     </div>
-                    <div class="name-and-avaliation">
+                    <div class="nameAndAvaliation">
                         <h2 class="title-game">${game.nome}</h2>
                         <span class="avaliation"></span>
                     </div>
@@ -207,7 +207,7 @@ function searchGame() {
                             <a href="${game[i].download}" class="download-button" target="_blank">Fazer download<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg></a>
                         </div>
                     </div>
-                    <div class="name-and-avaliation">
+                    <div class="nameAndAvaliation">
                         <h2 class="title-game">${game[i].nome}</h2>
                         <span class="avaliation"></span>
                     </div>
